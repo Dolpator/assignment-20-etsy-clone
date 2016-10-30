@@ -1,0 +1,1 @@
+require(["jquery"],function(t){var e=function(c){if(c&&c.length)try{{c.slice(1)}t.get(c[0],function(){},"text").always(function(){e(c.slice(1))})}catch(n){e(c.slice(1))}};e(Etsy.Context.resources)});
