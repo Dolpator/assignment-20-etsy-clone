@@ -12,7 +12,7 @@ img{
 }
 
 .detail-info{
-	width: 30%;
+	width: 20%;
 	padding: 20px;
 	border: 2px solid #911;
 	margin-left: 20px;
@@ -20,6 +20,11 @@ img{
 	margin-top: 20px;
 	margin-bottom: 20px;
 	background-color: #C8F7C5;
+	img{
+		width: 85%;
+		height: 150px;
+	}
+
 }
 
 
@@ -67,17 +72,16 @@ search-area{
 	height: 30px;
 }
 .img-card{
-	font-size: medium;
-	margin-left: 50px;
-	display: inline-block;
-	width: 50%;
-	h4{
-		font-size: 30px;
+	margin-left: 550px;
+	text-align: center;
+	margin: 0, auto;
+	padding: 20px;
+	border: 2px solid #911;
+	background-color: #C8F7C5;
+	img{
+		width: 80%;
 	}
-	p{
-		font-size: 15px;
-		text-align: right;
-	}
+
 }
 .detail-card{
 	width: 50%;

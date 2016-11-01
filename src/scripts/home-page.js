@@ -67,9 +67,9 @@ searchEtsy: function(evt){
                //console.log(detailObj)
                var imgInfo = detailObj.attributes.Images[0]
                return `
-                  <div class="col-xs-12 col-md-4 thumbnail detail-info" id='${detailObj.get('listing_id')}'>
+                  <div class="col-xs-12 col-sm-3 thumbnail detail-info" id='${detailObj.get('listing_id')}'>
                       <p><a href="#listings/${detailObj.get('listing_id')+".js?"}">${detailObj.get('listing_id')}</a> </p>
-                      <h5> ${detailObj.get('title').slice(0,40)}
+                      <h5> ${detailObj.get('title').slice(0,30)}
                       <img src=${imgInfo.url_170x135} />
                       <p price-info>  ${"$"+detailObj.get('price')}
                   </div>
