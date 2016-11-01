@@ -4,31 +4,63 @@ const $ = require('jquery')
 // const api_key = `b9ab0ja0tl144pddlcr40ax9`
 
 const DetailItems = Backbone.View.extend({
-      el: `#app-container`,
+   el: `#app-container`,
 
-      _buildDetailsHTMLTemplate: function(collData){
-         let dataStr = '';
-             dataStr += collData.models.map(function(detailObj){
-                console.log(detailObj.get('description'))
-               return `
-               <div class="col-xs-12">
-                  <div class="detail-card">
-                     <img src="${detailInfo.get('Images')}">
-                     <h4>${detailInfo.get('title')} </h4>
-                     <h3>${detailInfo.get('category_id')} <h3>
-                     <p class="text-muted">${detailObj.get('description')}  </p>
-                  </div>
-               </div>
-             }   `
-            })
-            .join('')
+   _buildDetailsHTMLTemplate: function(detailData){
+      //var imgDetail = detailData.get('Images')
+      return`
+<nav class="navbar nav-tabs navbar-prop">
+ <div class="navbar-header">
+   <div>
+            <a class="navbar-brand logo-div" href="#"><img class="etsy-logo" src="./images/etsylogo.png"/></a>
+      <form class="navbar-form navbar-left search-form">
+         <div class="form-group">
+               <input type="text" class="form-control" id="search-bar" placeholder="Search">
+         </div>
+      </form>
+      </div>
+         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Clothing and Accesories</a></li>
+            <li><a href="#">Jewelry</a></li>
+            <li><a href="#">Craft Supplies & Tools</a></li>
+            <li><a href="#">Weddings</a></li>
+            <li><a href="#">Entertainment</a></li>
+            <li><a href="#">Home and Living</a></li>
+            <li><a href="#">Kids and Baby</a></li>
+            <li><a href="#">Vintage</a></li>
+            <li><a href="#">Sell on Etsy</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-shoping-cart" aria-hidden="true"></span></a></li>
+          </ul>
 
-            return dataStr
-      },
+      </div>
+   </div>
+</nav>
+         </div>
+   </div>
 
-       render: function (collectionData){
-               this.el.innerHTML = this._buildDetailsHTMLTemplate(collectionData)
-            }
+      <div class="detail-info">
+       <div class="img-card">
+       <h4>${detailData.get('title')}</h4><p>${"$" + detailData.get('price')}</p>
+        <img src=${detailData.get('Images')[0].url_75x75} />
+      </div>
+      <div class="detail-card"
+      </div>
+        <div class="des-info"
+      <p>${detailData.get('description').slice(0,250)}
+      </div>
+   </div>
+      `
+
+
+   },
+
+   render: function (collectionData){
+      this.el.innerHTML = this._buildDetailsHTMLTemplate(collectionData)
+   }
 })
 
 module.exports = DetailItems

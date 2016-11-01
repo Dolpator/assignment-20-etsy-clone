@@ -1,36 +1,17 @@
 const Backbone = require('backbone')
 const $ = require('jquery')
 
-const HomePage = Backbone.View.extend({
+const SearchPage = Backbone.View.extend({
    el:  `#app-container`,
 
-   events: {
-      'click .detail-info' : 'listingInfo',
-      'keydown #search-bar': 'searchEtsy'
-   },
-searchEtsy: function(evt){
-   console.log(evt.target.value)
-   if(evt.keyCode === 13){
-      window.location.hash = 'search/' +evt.target.value
-      }
-},
-
-    listingInfo: function(evt){
-      //console.log(evt.currentTarget.id)
-       window.location.hash ='listing/${evt.currentTarget.id}'
-   },
-
-   _buildHomeHTMLTemplate: function(homeObj){
+   _buildHomeHTMLTemplate: function(homeObj, keywords){
 
         let homeStr ='<nav class="navbar nav-tabs navbar-prop">'
-            homeStr +=   '<div class="navbar-header">'
+            homeStr +=  '<div class="row">'
+            homeStr +=   '<div class="col-xs-12 col md-4">'
+            homeStr +=   '<div class="navbar-header ">'
             homeStr +=     '<div>'
-            homeStr +=      '<a class="navbar-brand logo-div" href="#home"><img class="etsy-logo" src="./images/etsylogo.png"/></a>'
-            homeStr +=      '<form class="navbar-form navbar-left search-form">'
-            homeStr +=         '<div class="form-group">'
-            homeStr +=            '<input type="text" class="form-control" id="search-bar" placeholder="Search Etsy...">'
-            homeStr +=         '</div>'
-            homeStr +=      '</form>'
+            homeStr +=      '<a class="navbar-brand logo-div" href="#"><img class="etsy-logo" src="./images/etsylogo.png"/></a>'
             homeStr +=     '</div>'
             homeStr +=    '<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">'
             homeStr +=      '<ul class="nav navbar-nav">'
@@ -50,16 +31,15 @@ searchEtsy: function(evt){
             homeStr +=      '</ul>'
             homeStr +=     '</div>'
             homeStr +=    '</div>'
+            homeStr +=   '</div>'
+            homeStr += '</div>'
             homeStr +='</nav>'
-            homeStr += '<div class="search-area">'
-            homeStr +=         '<h1>Whoever you are,</h1>'
-            homeStr +=         '<h1>find Whatever youre into</h1>'
-            homeStr +=     '<div>'
             homeStr +=        '<BR>'
             homeStr +=        '<BR>'
-            homeStr +=        '<h2>Active Listings</h2>'
+            homeStr +=        '<h2>Search Results</h2>'
             homeStr +=     '</div>'
             homeStr += '</div>'
+            homeStr += '<hr>'
             homeStr +='<div class="row">'
             homeStr += homeObj.models.map(function(detailObj){
                //console.log(detailObj)
@@ -79,9 +59,9 @@ searchEtsy: function(evt){
        return homeStr
       },
 
-   render: function (collectionHome){
-          this.el.innerHTML = this._buildHomeHTMLTemplate(collectionHome)
+   render: function (collectionHome, keywords){
+          this.el.innerHTML = this._buildHomeHTMLTemplate(collectionHome,keywords)
         }
 
 })
-module.exports = HomePage
+module.exports = SearchPage
