@@ -17,7 +17,7 @@ var AppRouter = Backbone.Router.extend({
 searchKeywords: function(keywords){
    var newSearchInstance = new SearchCollection(keywords)
        newSearchInstance.fetch().then(function(){
-      let searchViewInstance = new SearchPage(keywords)
+      let searchViewInstance = new SearchPage()
          searchViewInstance.render(newSearchInstance)
    })
 

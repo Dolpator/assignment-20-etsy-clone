@@ -7,18 +7,17 @@ const DetailItems = Backbone.View.extend({
    el: `#app-container`,
 
    _buildDetailsHTMLTemplate: function(detailData){
+      console.log(detailData)
       //var imgDetail = detailData.get('Images')
       return`
 <nav class="navbar nav-tabs navbar-prop">
  <div class="navbar-header">
-   <div>
-            <a class="navbar-brand logo-div" href="#"><img class="etsy-logo" src="./images/etsylogo.png"/></a>
+         <a class="navbar-brand logo-div" href="#"><img class="etsy-logo" src="./images/etsylogo.png"/></a>
       <form class="navbar-form navbar-left search-form">
          <div class="form-group">
                <input type="text" class="form-control" id="search-bar" placeholder="Search">
          </div>
       </form>
-      </div>
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href="#">Clothing and Accesories</a></li>
@@ -35,23 +34,24 @@ const DetailItems = Backbone.View.extend({
             <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
             <li><a href="#"><span class="glyphicon glyphicon-shoping-cart" aria-hidden="true"></span></a></li>
           </ul>
-
-      </div>
-   </div>
-</nav>
          </div>
    </div>
-
-      <div class="detail-info">
+</nav>
+   </div>
+     <div class="row">
+      <div class="col-xs-12 col-lg-3 detail-info">
        <div class="img-card">
-       <h4>${detailData.get('title')}</h4><p>${"$" + detailData.get('price')}</p>
         <img src=${detailData.get('Images')[0].url_75x75} />
       </div>
-      <div class="detail-card"
+      <div class="detail-card">
+      <h4>${detailData.get('title')}</h4><p>${"$" + detailData.get('price')}</p>
+
       </div>
         <div class="des-info"
       <p>${detailData.get('description').slice(0,250)}
       </div>
+     </div>
+    </div>
    </div>
       `
 

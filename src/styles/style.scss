@@ -19,6 +19,7 @@ img{
 	margin-right: 20px;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	background-color: #C8F7C5;
 }
 
 
@@ -69,7 +70,7 @@ search-area{
 	font-size: medium;
 	margin-left: 50px;
 	display: inline-block;
-	width: 75%;
+	width: 50%;
 	h4{
 		font-size: 30px;
 	}
@@ -79,7 +80,8 @@ search-area{
 	}
 }
 .detail-card{
-
+	width: 50%;
+	background-color: #C8F7C5;
 	display: inline-block;
 	vertical-align: top;
 }

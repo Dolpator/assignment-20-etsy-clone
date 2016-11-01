@@ -8,10 +8,12 @@ const HomePage = Backbone.View.extend({
       'click .detail-info' : 'listingInfo',
       'keydown #search-bar': 'searchEtsy'
    },
+
 searchEtsy: function(evt){
-   console.log(evt.target.value)
    if(evt.keyCode === 13){
-      window.location.hash = 'search/' +evt.target.value
+      let keyword = evt.target.value
+      window.location.hash = 'search/' + evt.target.value
+
       }
 },
 
@@ -65,18 +67,35 @@ searchEtsy: function(evt){
                //console.log(detailObj)
                var imgInfo = detailObj.attributes.Images[0]
                return `
-                  <div class="col-xs-12 col-md-3 thumbnail detail-info" id='${detailObj.get('listing_id')}'>
+                  <div class="col-xs-12 col-md-4 thumbnail detail-info" id='${detailObj.get('listing_id')}'>
                       <p><a href="#listings/${detailObj.get('listing_id')+".js?"}">${detailObj.get('listing_id')}</a> </p>
                       <h5> ${detailObj.get('title').slice(0,40)}
                       <img src=${imgInfo.url_170x135} />
                       <p price-info>  ${"$"+detailObj.get('price')}
                   </div>
-                     `
-            homeStr += '</div>'
-         })
-         .join('')
+                  `
+               })
+               .join(''),
 
-       return homeStr
+            homeStr += '</div>'
+            homeStr +=   '<nav aria-label="Page navigation">'
+            homeStr +=     ' <ul class="pagination">'
+            homeStr +=        ' <li>'
+            homeStr +=        ' <a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>'
+            homeStr +=         '</li>'
+            homeStr +=         '<li><a href="">1</a></li>'
+            homeStr +=         '<li><a href="">2</a></li>'
+            homeStr +=         '<li><a href="">3</a></li>'
+            homeStr +=         '<li><a href="">4</a></li>'
+            homeStr +=         '<li><a href="">5</a></li>'
+            homeStr +=         '<li>'
+            homeStr +=         '<a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>'
+            homeStr +=         '</li>'
+            homeStr +=      '</ul>'
+            homeStr +=   '</nav> '
+
+
+           return homeStr
       },
 
    render: function (collectionHome){

@@ -4,7 +4,7 @@ const $ = require('jquery')
 const SearchPage = Backbone.View.extend({
    el:  `#app-container`,
 
-   _buildHomeHTMLTemplate: function(homeObj, keywords){
+   _buildHomeHTMLTemplate: function(homeObj){
 
         let homeStr ='<nav class="navbar nav-tabs navbar-prop">'
             homeStr +=  '<div class="row">'
@@ -34,9 +34,7 @@ const SearchPage = Backbone.View.extend({
             homeStr +=   '</div>'
             homeStr += '</div>'
             homeStr +='</nav>'
-            homeStr +=        '<BR>'
-            homeStr +=        '<BR>'
-            homeStr +=        '<h2>Search Results</h2>'
+            homeStr +=        '<h2 class="contentTitle">Search Results</h2>'
             homeStr +=     '</div>'
             homeStr += '</div>'
             homeStr += '<hr>'
@@ -59,8 +57,8 @@ const SearchPage = Backbone.View.extend({
        return homeStr
       },
 
-   render: function (collectionHome, keywords){
-          this.el.innerHTML = this._buildHomeHTMLTemplate(collectionHome,keywords)
+   render: function (collectionHome){
+          this.el.innerHTML = this._buildHomeHTMLTemplate(collectionHome)
         }
 
 })
