@@ -6,7 +6,7 @@ const SearchPage = Backbone.View.extend({
 
    _buildHomeHTMLTemplate: function(homeObj){
 
-        let homeStr ='<nav class="navbar nav-tabs navbar-prop">'
+        let homeStr = '<nav class="navbar nav-tabs navbar-prop">'
             homeStr +=  '<div class="row">'
             homeStr +=   '<div class="col-xs-12 col md-4">'
             homeStr +=   '<div class="navbar-header ">'
@@ -45,7 +45,7 @@ const SearchPage = Backbone.View.extend({
                return `
                   <div class="col-xs-12 col-md-3 thumbnail detail-info" id='${detailObj.get('listing_id')}'>
                       <p><a href="#listings/${detailObj.get('listing_id')+".js?"}">${detailObj.get('listing_id')}</a> </p>
-                      <h5> ${detailObj.get('title').slice(0,40)}
+                      <h5> ${detailObj.get('title').slice(0,40)}${detailObj.get('title').length <= 40 ? "" : '...'}
                       <img src=${imgInfo.url_170x135} />
                       <p price-info>  ${"$"+detailObj.get('price')}
                   </div>

@@ -19,7 +19,7 @@ searchEtsy: function(evt){
 
     listingInfo: function(evt){
       //console.log(evt.currentTarget.id)
-       window.location.hash ='listing/${evt.currentTarget.id}'
+       window.location.hash =`listing/${evt.currentTarget.id}`
    },
 
    _buildHomeHTMLTemplate: function(homeObj){
@@ -67,9 +67,9 @@ searchEtsy: function(evt){
                //console.log(detailObj)
                var imgInfo = detailObj.attributes.Images[0]
                return `
-                  <div class="col-xs-12 col-sm-3 thumbnail detail-info" id='${detailObj.get('listing_id')}'>
+                  <div class="col-xs-12 col-md-4 thumbnail detail-info" id='${detailObj.get('listing_id')}'>
                       <p><a href="#listings/${detailObj.get('listing_id')+".js?"}">${detailObj.get('listing_id')}</a> </p>
-                      <h5> ${detailObj.get('title').slice(0,30)}
+                      <h5> ${detailObj.get('title').slice(0,25)}${ detailObj.get('title').length <= 25 ? "" : '...' }
                       <img src=${imgInfo.url_170x135} />
                       <p price-info>  ${"$"+detailObj.get('price')}
                   </div>
