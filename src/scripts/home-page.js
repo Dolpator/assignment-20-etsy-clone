@@ -28,7 +28,7 @@ searchEtsy: function(evt){
         let homeStr ='<nav class="navbar nav-tabs navbar-prop">'
             homeStr +=   '<div class="navbar-header">'
             homeStr +=     '<div>'
-            homeStr +=      '<a class="navbar-brand logo-div" href="#home"><img class="etsy-logo" src="./images/etsylogo.png"/></a>'
+            homeStr +=      '<a class="navbar-brand logo-div" href="#home"><img class="etsy-logo" img src="./images/etsylogo2.png" /></a>'
             homeStr +=      '<form class="navbar-form navbar-left search-form">'
             homeStr +=         '<div class="form-group">'
             homeStr +=            '<input type="text" class="form-control" id="search-bar" placeholder="Search Etsy...">'

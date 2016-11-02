@@ -11,7 +11,7 @@ const SearchPage = Backbone.View.extend({
             homeStr +=   '<div class="col-xs-12 col md-4">'
             homeStr +=   '<div class="navbar-header ">'
             homeStr +=     '<div>'
-            homeStr +=      '<a class="navbar-brand logo-div" href="#"><img class="etsy-logo" src="./images/etsylogo.png"/></a>'
+            homeStr +=      '<a class="navbar-brand logo-div" href="#"><img class="etsy-logo" /></a>'
             homeStr +=     '</div>'
             homeStr +=    '<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">'
             homeStr +=      '<ul class="nav navbar-nav">'
