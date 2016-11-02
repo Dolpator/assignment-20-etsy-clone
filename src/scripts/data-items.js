@@ -37,13 +37,14 @@ const DetailItems = Backbone.View.extend({
          </div>
    </div>
 </nav>
-   </div>
+       <a class="left-arrow arrow">&lt;</a>
      <div class="row">
       <div class="col-md-6 col-md-offset-3  img-card ">
        <h4>${detailData.get('title')}</h4><p>${"$" + detailData.get('price')}</p>
         <img src=${detailData.get('Images')[0].url_75x75} />
-        <p>${detailData.get('description').slice(0,250)}
+        <p>${detailData.get('description').slice(0,250)}${ detailData.get('description').length <= 250 ? "" : '...'}
       </div>
+        <a class="right-arrow arrow">&gt;</a>
      </div>
     </div>
    </div>

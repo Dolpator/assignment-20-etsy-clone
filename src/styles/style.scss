@@ -84,3 +84,30 @@ search-area{
 	background-color: #C8F7C5;
 
 }
+a.left-arrow, a.right-arrow{
+	display:block;
+	position:absolute;
+	top: 20%;
+	left: 95%;
+	width:45px;
+	height:45px;
+	line-height:40px;
+	font-size:30px;
+	background:#000;
+	text-align:center;
+	cursor:pointer;
+	z-index: 6;
+	color:#fff;
+	text-decoration: none;
+	border-radius:50%
+}
+a.left-arrow:hover, a.right-arrow:hover{
+	background: #C8F7C5;
+	opacity:.8
+}
+a.left-arrow{
+	left:30px
+}
+a.right-arrow{
+	right:30px
+}

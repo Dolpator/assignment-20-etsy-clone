@@ -10,10 +10,11 @@ const HomePage = Backbone.View.extend({
    },
 
 searchEtsy: function(evt){
-   if(evt.keyCode === 13){
-      let keyword = evt.target.value
-      window.location.hash = 'search/' + evt.target.value
+   console.log (evt.target.value)
 
+   if(evt.keyCode === 13){
+      // let keyword = evt.target.value
+      window.location.hash = 'search/' + evt.target.value
       }
 },
 
