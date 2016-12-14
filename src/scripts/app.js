@@ -10,7 +10,7 @@ var AppRouter = Backbone.Router.extend({
    // console.log('app is routing')
    routes: {
       "search/:keywords": "searchKeywords",
-      "listings/:id" : "showDetailsPage",
+      "listing/:id" : "showDetailsPage",
       "" : "showHomePage"
    },
 
